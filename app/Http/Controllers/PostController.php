@@ -30,7 +30,7 @@ class PostController extends Controller
         $post = Http::get('https://jsonplaceholder.typicode.com/posts', [
             'id' => $id,
         ]);
-        return view('posts.show', compact('post'));
+        return view('posts.show', ['post' => $post]);
     }
 
 }

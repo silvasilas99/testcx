@@ -40,10 +40,26 @@
                 <tbody>
                     @foreach (json_decode($posts) as $post)
                         <tr>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><p class="text-gray-900 whitespace-no-wrap">{{ $post->id }}</p></td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><p class="text-gray-900 whitespace-no-wrap">{{ $post->userId }}</p></td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><p class="text-gray-900 whitespace-no-wrap text_item">{{ $post->title }}</p></td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><p class="text-gray-900 whitespace-no-wrap text_item">{{ $post->body }}</p></td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">
+                                    <a href="{{ url('/'.$post->id) }}"> {{ $post->id }} </a>
+                                </p>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">
+                                    <a href="{{ url('/'.$post->id) }}"> {{ $post->userId }} </a>
+                                </p>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap text_item">
+                                    <a href="{{ url('/'.$post->id) }}">{{ $post->title }}
+                                </p>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap text_item">
+                                    <a href="{{ url('/'.$post->id) }}">{{ $post->body }}
+                                </p>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
